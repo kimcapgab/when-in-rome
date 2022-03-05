@@ -1,39 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
-import convert from "./api/numbers/num";
-import romanConvert from "./api/numbers/roman";
+import NumToRoman from "../components/forms/NumToRoman";
+import RomanToNum from "../components/forms/romanToNum";
 
 export default function Home() {
-  const [num, setNum] = useState("");
-  const [result, setResult] = useState("");
-  const [roman, setRoman] = useState("");
-  const [answer, setAnswer] = useState("");
-
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setNum(value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let res = await convert(num);
-    console.log(res);
-    setResult(res);
-  };
-
-  const handleChangeRoman = (e) => {
-    const { value } = e.target;
-    setRoman(value);
-  };
-
-  const handleSubmitRoman = async (e) => {
-    e.preventDefault();
-    let res = await romanConvert(roman);
-    console.log(res);
-    setAnswer(res);
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -46,21 +16,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div>
-          <h1>When In Rome</h1>
-          <form>
-            <p>Convert a Number into a Roman Numeral</p>
-            <input value={num} name="num" onChange={handleChange} />
-            <button onClick={handleSubmit}>Convert</button>
-            <h2>{result}</h2>
-          </form>
-
-          <form>
-            <p>Convert a Roman Numeral into a Number</p>
-            <input value={roman} name="roman" onChange={handleChangeRoman} />
-            <button onClick={handleSubmitRoman}>Convert</button>
-            <h2>{answer}</h2>
-          </form>
+        <h1>When In Rome</h1>
+        <div className={styles.background}>
+          <div className={styles.form}>
+            <NumToRoman className={styles.formNum} />
+            <RomanToNum className={styles.formRoman} />
+          </div>
         </div>
       </main>
     </div>
