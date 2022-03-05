@@ -1,9 +1,20 @@
 import Head from "next/head";
+import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import NumToRoman from "../components/forms/NumToRoman";
 import RomanToNum from "../components/forms/romanToNum";
 
 export default function Home() {
+  const [toggle, setToggle] = useState(false);
+
+  const handleSwitch = () => {
+    if (toggle === false) {
+      setToggle(true);
+    } else {
+      setToggle(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,8 +30,30 @@ export default function Home() {
         <h1>When In Rome</h1>
         <div className={styles.background}>
           <div className={styles.form}>
-            <NumToRoman className={styles.formNum} />
-            <RomanToNum className={styles.formRoman} />
+            <div className={styles.switchButton}>
+              {toggle === false ? (
+                <button
+                  className={styles.button_83}
+                  role="button"
+                  onClick={handleSwitch}
+                >
+                  Switch to Convert Roman Numerals to Numbers
+                </button>
+              ) : (
+                <button
+                  className={styles.button_83}
+                  role="button"
+                  onClick={handleSwitch}
+                >
+                  Switch to Convert Numbers to Roman Numerals
+                </button>
+              )}
+            </div>
+            {toggle === false ? (
+              <NumToRoman className={styles.formNum} />
+            ) : (
+              <RomanToNum className={styles.formRoman} />
+            )}
           </div>
         </div>
       </main>

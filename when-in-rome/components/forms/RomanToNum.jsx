@@ -14,7 +14,6 @@ export default function RomanToNum() {
   const handleSubmitRoman = async (e) => {
     e.preventDefault();
     let res = await romanConvert(roman);
-    console.log(res);
     setAnswer(res);
   };
 
@@ -29,7 +28,9 @@ export default function RomanToNum() {
           onChange={handleChangeRoman}
         />
         <div className={classes.userButton}>
-          <button onClick={handleSubmitRoman}>Convert</button>
+          <button className={classes.buttonConvert} onClick={handleSubmitRoman}>
+            Convert
+          </button>
         </div>
         <div className={classes.userResult}>
           <h2 className={classes.resultText}>{answer}</h2>

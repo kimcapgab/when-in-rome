@@ -2,14 +2,14 @@
   display: flex;
   justify-content: center;
   grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 .containerR {
   display: flex;
   justify-content: center;
   grid-column: 2 / 3;
-  grid-row: 5/ 6;
+  grid-row: 3 / 4;
 }
 
 .formGrid {
@@ -19,9 +19,13 @@
   grid-auto-rows: minmax(30px, auto);
   align-items: center;
   justify-items: center;
-  background-color: #f8b47c;
   padding: 1.5%;
-  border-radius: 15px;
+  background: rgba(248, 180, 124, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .title {
@@ -33,6 +37,8 @@
 .userInput {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
 }
 
 .userButton {
@@ -47,4 +53,29 @@
 
 .resultText {
   margin: 0;
+}
+
+.buttonConvert {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #fff, #f8eedb);
+  border-radius: 0.5rem;
+  font-family: "Cinzel", serif;
+  cursor: pointer;
+  border: 0 solid #e5e7eb;
+  outline: 2px solid transparent;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -6px 8px 10px rgba(81, 41, 10, 0.1),
+    0px 2px 2px rgba(81, 41, 10, 0.2);
+}
+
+.buttonConvert:active {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81, 41, 10, 0.15),
+    0px 1px 1px rgba(81, 41, 10, 0.15);
+  transform: translateY(0.125rem);
+}
+
+.buttonConvert:focus {
+  box-shadow: rgba(72, 35, 7, 0.46) 0 0 0 4px,
+    -6px 8px 10px rgba(81, 41, 10, 0.1), 0px 2px 2px rgba(81, 41, 10, 0.2);
 }
