@@ -15,26 +15,33 @@ export default function romanConvert(req, res) {
 
   function findRoman(x) {
     let found = romanNums.find(([key]) => key === x);
-    console.log(found);
-    return found;
+    if (found === undefined) {
+      console.log("und");
+      let value = 0;
+      return value;
+    } else {
+      let value = found[1];
+      console.log(found[1]);
+      return value;
+    }
   }
 
   // let i = 0; i < 2; i++
   for (let i = 0; i < romanArray.length; i++) {
     // current = "I"
     current = romanArray[i];
-    // console.log(current);
+    console.log(current);
     // next = "V"
     next = romanArray[i + 1];
-    // console.log(next);
+    console.log(next);
 
-    currentValue = findRoman(current)[1];
-    // console.log(currentValue);
+    currentValue = findRoman(current);
+    console.log(currentValue);
     nextValue = findRoman(next);
-    // console.log(nextValue);
+    console.log(nextValue);
 
     if (currentValue < nextValue) {
-      total += nextValue - currentValue;
+      total -= currentValue;
     } else {
       total += currentValue;
     }

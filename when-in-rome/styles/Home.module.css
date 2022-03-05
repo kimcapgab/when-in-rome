@@ -5,11 +5,9 @@
 .main {
   min-height: 100vh;
   text-align: center;
-  /* border: 2px red solid; */
 }
 
 .background {
-  /* border: 2px red solid; */
   min-height: 85vh;
   background-image: url(https://res.cloudinary.com/dn2x2ldxj/image/upload/v1646279257/rome2_mjthwe.jpg);
   background-repeat: no-repeat;
@@ -24,13 +22,3 @@
   gap: 2px;
   grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
 }
-
-/* .formNum {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-
-.formRoman {
-  grid-column: 2 / 3;
-  grid-row: 5/ 6;
-} */
