@@ -12,7 +12,7 @@ export default function Home() {
           name="description"
           content="Convert numbers to Roman Numerals and vice versa"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/roman.ico" />
       </Head>
 
       <main className={styles.main}>
