@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import NumToRoman from "../components/forms/NumToRoman";
-import RomanToNum from "../components/forms/romanToNum";
+import RomanToNum from "../components/forms/RomanToNum";
 
 export default function Home() {
   const [toggle, setToggle] = useState(false);
