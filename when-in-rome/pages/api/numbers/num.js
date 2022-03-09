@@ -5,7 +5,7 @@ export default function convert(req, res) {
   let result = [];
 
   roman.forEach(function (convert) {
-    while (num >= convert[1]) {
+    while (num >= convert[1] && num < 1001) {
       result.push(convert[0]);
       num -= convert[1];
     }

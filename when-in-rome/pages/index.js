@@ -30,6 +30,25 @@ export default function Home() {
         <h1>When In Rome</h1>
         <div className={styles.background}>
           <div className={styles.form}>
+            <div className={styles.instructions}>
+              {toggle === false ? (
+                <div>
+                  <h4>
+                    This Roman Numeral Converter can be used to convert numbers
+                    to Roman Numerals. If you need to convert from Roman
+                    Numerals to numbers, please click the button below to make
+                    the switch.
+                  </h4>
+                </div>
+              ) : (
+                <h4>
+                  This Roman Numeral Converter can be used to convert Roman
+                  Numerals to numbers. If you need to convert from numbers to
+                  Roman Numerals, please click the button below to make the
+                  switch.
+                </h4>
+              )}
+            </div>
             <div className={styles.switchButton}>
               {toggle === false ? (
                 <button
@@ -37,7 +56,7 @@ export default function Home() {
                   role="button"
                   onClick={handleSwitch}
                 >
-                  Switch to Convert Roman Numerals to Numbers
+                  Switch
                 </button>
               ) : (
                 <button
@@ -45,7 +64,7 @@ export default function Home() {
                   role="button"
                   onClick={handleSwitch}
                 >
-                  Switch to Convert Numbers to Roman Numerals
+                  Switch
                 </button>
               )}
             </div>
